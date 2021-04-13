@@ -106,10 +106,10 @@ class Enemy {
         this.life = life
         this.rad = this.life * 10 + 10
         this.possibleLocs = [
-            [2 * this.rad, Math.floor(Math.random() * hgt)],
-            [wid - 2 * this.rad, Math.floor(Math.random() * hgt)],
-            [Math.floor(Math.random() * wid), 2 * this.rad],
-            [Math.floor(Math.random() * wid), hgt - 2 * this.rad],
+            [0, Math.floor(Math.random() * hgt)],
+            [wid, Math.floor(Math.random() * hgt)],
+            [Math.floor(Math.random() * wid), 0],
+            [Math.floor(Math.random() * wid), hgt],
         ]
         this.randomState = this.possibleLocs[Math.floor(Math.random() * 4)]
         this.x = this.randomState[0]
