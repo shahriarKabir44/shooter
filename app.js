@@ -2,6 +2,10 @@ var canvas = document.getElementById('cnv')
 
 var ctx = canvas.getContext('2d')
 
+$(document).ready(() => {
+    $('#my-modal1').modal({ show: true })
+})
+
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 var wid = canvas.width
@@ -242,6 +246,6 @@ window.onclick = (e) => {
     }
 
 }
-runGame()
+
 
 
