@@ -176,7 +176,7 @@ function generateEnemies() {
     enemyCounter++
     setTimeout(() => {
         generateEnemies()
-    }, 900)
+    }, 800)
 }
 var stillAlive = 1
 var score = 0
