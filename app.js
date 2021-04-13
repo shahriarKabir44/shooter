@@ -17,7 +17,7 @@ var cent = {
 var player = {
     x: wid / 2,
     y: hgt / 2,
-    rad: 25,
+    rad: 15,
     color: 'blue',
     render: function () {
         ctx.beginPath()
@@ -64,7 +64,7 @@ class Bullet {
     }
 
 }
-var ammo = 10
+var ammo = 25
 var friction = 0.99
 class ExplosionParticle {
     constructor(x, y, color) {
@@ -165,7 +165,7 @@ var colors = ['white']
 
 function reload() {
     ammo++;
-    ammo = Math.min(ammo, 10)
+    ammo = Math.min(ammo, 25)
 }
 
 setInterval(reload, 300)
