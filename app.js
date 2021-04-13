@@ -151,8 +151,8 @@ class Enemy {
 
     }
     move() {
-        this.x += this.vlc.x * this.speed;
-        this.y += this.vlc.y * this.speed;
+        this.x += this.vlc.x * enemyspeed;
+        this.y += this.vlc.y * enemyspeed;
         if ((this.x <= 0 || this.x >= wid) || (this.y <= 0 || this.y >= hgt)) {
             this.destroy()
             return
@@ -167,7 +167,7 @@ function reload() {
     ammo++;
     ammo = Math.min(ammo, 25)
 }
-
+var enemyspeed = 1
 setInterval(reload, 300)
 
 function generateEnemies() {
@@ -176,7 +176,7 @@ function generateEnemies() {
     enemyCounter++
     setTimeout(() => {
         generateEnemies()
-    }, 800)
+    }, 900)
 }
 var stillAlive = 1
 var score = 0
@@ -203,6 +203,7 @@ function runGame() {
                 if (enemies[enemy].life == 0) {
                     killed.push(enemies[enemy])
                     score++
+                    if (score % 25 == 0) enemyspeed += 0.3
 
                 }
                 success.push(bullets[bullet])
