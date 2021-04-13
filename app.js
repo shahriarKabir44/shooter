@@ -178,7 +178,6 @@ function generateEnemies() {
         generateEnemies()
     }, 900)
 }
-generateEnemies()
 var stillAlive = 1
 var score = 0
 var particles = []
@@ -248,3 +247,4 @@ window.onclick = (e) => {
 }
 
 
+function start() { runGame(); generateEnemies(); }
