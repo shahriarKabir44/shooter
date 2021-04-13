@@ -64,7 +64,7 @@ class Bullet {
     }
 
 }
-var ammo = 8
+var ammo = 10
 var friction = 0.99
 class ExplosionParticle {
     constructor(x, y, color) {
@@ -165,7 +165,7 @@ var colors = ['white']
 
 function reload() {
     ammo++;
-    ammo = Math.min(ammo, 8)
+    ammo = Math.min(ammo, 10)
 }
 
 setInterval(reload, 300)
@@ -176,7 +176,7 @@ function generateEnemies() {
     enemyCounter++
     setTimeout(() => {
         generateEnemies()
-    }, 800)
+    }, 900)
 }
 generateEnemies()
 var stillAlive = 1
@@ -240,12 +240,11 @@ window.onclick = (e) => {
         var angle = Math.atan2((e.clientY - cent.y), (e.clientX - cent.x))
         var xx = Math.cos(angle)
         var yx = Math.sin(angle)
-        var blt1 = new Bullet(wid / 2, hgt / 2, colors[Math.floor(Math.random() * colors.length)], { x: xx, y: yx }, counter)
+        var blt1 = new Bullet(player.x, player.y, colors[Math.floor(Math.random() * colors.length)], { x: xx, y: yx }, counter)
         bullets[counter] = blt1
         counter++
     }
 
 }
-
 
 
